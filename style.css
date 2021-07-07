@@ -1,3 +1,32 @@
-/* body {
-    background-color: salmon;
-} */
+.card-images {
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width: 20%;
+    border: none;
+    margin: 5px;
+}
+
+.land {
+    border: 5px solid green;
+}
+
+.creature {
+    border: 5px solid red;
+}
+
+.instant {
+    border: 5px solid yellow;
+}
+
+@media screen and (max-width: 768px) {
+    .card-images {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .card-images {
+        width: 50%;
+    }
+}
