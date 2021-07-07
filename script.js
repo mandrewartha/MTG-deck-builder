@@ -1,10 +1,20 @@
+//modal pop up
 $(document).ready(function(){
     $('.modal').modal();
   });
-
+//dropdown in nav bar
 $(document).ready(function(){
     $('.dropdown-trigger').dropdown({hover: false});
 });  
+
+//color of mana select
+(function($){
+    $(function(){
+      // Plugin initialization
+      $('select').not('.disabled').formSelect();
+    });
+   
+  })(jQuery);
 
 // Global variables
 var numCardInput = document.querySelector("#number-of-card");
@@ -57,19 +67,31 @@ function getUserInput(event) {
     var numLand = numLandInput.value;
     var numCreature = numCreatureInput.value;
     var numInstant = numInstantInput.value;
-  
+
+    console.log(numCard)
     // Add an alert message for valid number of cards 
-    var totalNumCards = numLand + numCreature + numInstant
-    
-    if (numCard < totalNumCards){
-        numLandInput.textContent = "Please remove cards to equal Total Number of Cards!";
-        numCreatures.textContent = "Please remove cards to equal Total Number of Cards!";
-        numInstantInput.textContent = "Please remove cards to equal Total Number of Cards!";
-    } else if (numCard > totalNumCards) {
-        numLandInput.textContent = "Please enter more cards";
-        numCreatures.textContent = "Please enter more cards";
-        numInstantInput.textContent = "Please enter more cards";
+    var totalNumCards = Number(numLand) + Number(numCreature) + Number(numInstant);
+
+    var errorMessage = document.querySelector("#error-message")
+
+    if (Number(numCard) < totalNumCards) {
+        errorMessage.textContent = "Please remove cards to equal total number of cards";
+    } else if (Number(numCard) > totalNumCards) {
+        errorMessage.textContent = "Please enter more cards";
+    } else if (Number(numCard) === totalNumCards) {
+        errorMessage.textContent = "";
     }
+
+
+    // if (Number(numCard) < totalNumCards){
+    //     numLandInput.textContent = "Please remove cards to equal Total Number of Cards!";
+    //     numCreatureInput.textContent = "Please remove cards to equal Total Number of Cards!";
+    //     numInstantInput.textContent = "Please remove cards to equal Total Number of Cards!";
+    // } else if (Number(numCard) > totalNumCards) {
+    //     numLandInput.textContent = "Please enter more cards";
+    //     numCreatureInput.textContent = "Please enter more cards";
+    //     numInstantInput.textContent = "Please enter more cards";
+    // }
   
     console.log(numCard);
     console.log(colorMana);
