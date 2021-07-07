@@ -47,7 +47,7 @@ var landCardJson = [
         type: "land",
         color: "green",
         image: "https://crystalcommerce-assets.s3.amazonaws.com/photos/23611/large/Forest1.jpg?1406831491"
-    },
+    }]
 
 function getUserInput(event) {
     event.preventDefault();
@@ -66,7 +66,7 @@ function getUserInput(event) {
     console.log(numInstant);
     getCardData(colorMana);
   }
-  
+
   function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant) {
     var mtgApiUrl = "https://api.magicthegathering.io/v1/cards";
   
@@ -101,6 +101,6 @@ function getUserInput(event) {
         console.log(instantPoolArr);
       })
   }
-  
+
   modalFormEl.addEventListener("submit",getUserInput);
 
