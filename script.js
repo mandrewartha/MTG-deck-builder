@@ -12,6 +12,7 @@ var colorManaInput = document.querySelector("#color-of-mana");
 var numLandInput = document.querySelector("#number-of-land");
 var numCreatureInput = document.querySelector("#number-of-creature");
 var numInstantInput = document.querySelector("#number-of-instant");
+var cardDisplayRow = document.querySelector("#card-display-row");
 
 var modalFormEl = document.querySelector("#modal-form")
 var generateBtn = document.querySelector("#generate-Btn");
@@ -59,24 +60,24 @@ function getUserInput(event) {
     var numInstant = numInstantInput.value;
   
     // Add an alert message for valid number of cards 
-    var totalNumCards = numLand + numCreature + numInstant
+    // var totalNumCards = numLand + numCreature + numInstant
     
-    if (numCard < totalNumCards){
-        numLandInput.textContent = "Please remove cards to equal Total Number of Cards!";
-        numCreatures.textContent = "Please remove cards to equal Total Number of Cards!";
-        numInstantInput.textContent = "Please remove cards to equal Total Number of Cards!";
-    } else if (numCard > totalNumCards) {
-        numLandInput.textContent = "Please enter more cards";
-        numCreatures.textContent = "Please enter more cards";
-        numInstantInput.textContent = "Please enter more cards";
-    }
+    // if (numCard < totalNumCards){
+    //     numLandInput.textContent = "Please remove cards to equal Total Number of Cards!";
+    //     numCreatures.textContent = "Please remove cards to equal Total Number of Cards!";
+    //     numInstantInput.textContent = "Please remove cards to equal Total Number of Cards!";
+    // } else if (numCard > totalNumCards) {
+    //     numLandInput.textContent = "Please enter more cards";
+    //     numCreatures.textContent = "Please enter more cards";
+    //     numInstantInput.textContent = "Please enter more cards";
+    // }
   
     console.log(numCard);
     console.log(colorMana);
     console.log(numLand);
     console.log(numCreature);
     console.log(numInstant);
-    getCardData(colorMana);
+    getCardData(colorMana, numLand, numCreature, numInstant);
   }
 
   function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant) {
@@ -118,8 +119,57 @@ function getUserInput(event) {
         console.log(landPoolArr);
         console.log(creaturePoolArr);
         console.log(instantPoolArr);
+
+        var landChosenArr = [];
+        var creatureChosenArr = [];
+        var instantChosenArr = [];
+
+        for (let i = 0; i < numberOfLand; i++) {
+          var randomLandChosen = Math.floor(Math.random() * landPoolArr.length);
+          var landPoolArrChosen = landPoolArr[randomLandChosen];
+          landChosenArr.push(landPoolArrChosen);
+        }
+
+        for (let i = 0; i < numberOfCreature; i++) {
+          var randomCreatureChosen = Math.floor(Math.random() * creaturePoolArr.length);
+          var creaturePoolArrChosen = creaturePoolArr[randomCreatureChosen];
+          creatureChosenArr.push(creaturePoolArrChosen);
+        }
+
+        for (let i = 0; i < numberOfInstant; i++) {
+          var randomInstantChosen = Math.floor(Math.random() * instantPoolArr.length);
+          var instantPoolArrChosen = instantPoolArr[randomInstantChosen];
+          instantChosenArr.push(instantPoolArrChosen);
+        }
+
+        // var randomLandChosen = Math.floor(Math.random() * landPoolArr.length);
+        // var randomCreatureChosen = Math.floor(Math.random() * creaturePoolArr.length);
+        // var randomInstantChosen = Math.floor(Math.random() * instantPoolArr.length);
+
+        console.log(landChosenArr);
+        console.log(creatureChosenArr);
+        console.log(instantChosenArr);
+
+        // var imageTest1 = data.cards[0].imageUrl;
+        // var imageTest2 = data.cards[1].imageUrl;
+        // var imageTest3 = data.cards[2].imageUrl;
+
+        // displayCard(imageTest1, imageTest2, imageTest3)
       })
   }
+
+  // function displayCard(image1, image2, image3) {
+  //   var imageFrame1 = document.createElement("img");
+  //   var imageFrame2 = document.createElement("img");
+  //   var imageFrame3 = document.createElement("img");
+  //   imageFrame1.setAttribute("src", image1);
+  //   // add class for imageFrame
+  //   imageFrame2.setAttribute("src", image2);
+  //   imageFrame3.setAttribute("src", image3);
+  //   cardDisplayRow.append(imageFrame1);
+  //   cardDisplayRow.append(imageFrame2);
+  //   cardDisplayRow.append(imageFrame3);
+  // }
 
   modalFormEl.addEventListener("submit",getUserInput);
 
