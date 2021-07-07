@@ -19,33 +19,33 @@ var generateBtn = document.querySelector("#generate-Btn");
 // JSON data of land cards
 var landCardJson = [
     {
-        name: "plains",
-        type: "land",
-        color: "white",
+        name: "Plains",
+        type: "Land",
+        color: "White",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvChOj0BCeLNntc5zzn6sEda9jbH1mFz2QOQ&usqp=CAU"
     },
     {
-        name: "swamp",
-        type: "land",
-        color: "black",
+        name: "Swamp",
+        type: "Land",
+        color: "Black",
         image: "https://media.magic.wizards.com/image_legacy_migration/images/magic/tcg/products/avr/wllqq7y4tx_en.jpg"
     },
     {
-        name: "island",
-        type: "land",
-        color: "blue",
+        name: "Island",
+        type: "Land",
+        color: "Blue",
         image: "https://www.mtglands.com/img/small/rix-193.jpg"
     },
     {
-        name: "mountain",
-        type: "land",
-        color: "red",
+        name: "Mountain",
+        type: "Land",
+        color: "Red",
         image: "https://c1.scryfall.com/file/scryfall-cards/large/front/4/c/4cf7d0ad-8fe2-4065-89e3-c2ee04062695.jpg?1592518017"
     },
     {
-        name: "forest",
-        type: "land",
-        color: "green",
+        name: "Forest",
+        type: "Land",
+        color: "Green",
         image: "https://crystalcommerce-assets.s3.amazonaws.com/photos/23611/large/Forest1.jpg?1406831491"
     }
 ]
@@ -97,16 +97,23 @@ function getUserInput(event) {
         var landPoolArr = [];
         var creaturePoolArr = [];
         var instantPoolArr = [];
+
+        for (let i = 0; i < landCardJson.length; i++) {
+          var dataMatchColorLand = landCardJson[i].color;
+          var dataMatchTypesLand = landCardJson[i].type;
+          if (dataMatchColorLand === colorOfMana && dataMatchTypesLand === landCategory) {
+            landPoolArr.push(landCardJson[i].name);
+          }  
+        }
+
         for (let i = 0; i < data.cards.length; i++) {
           var dataMatchColor = data.cards[i].colors[0];
           var dataMatchTypes = data.cards[i].types[0];
-          if(dataMatchColor === colorOfMana && dataMatchTypes === landCategory) {
-            landPoolArr.push(data.cards[i].name);
-          } else if(dataMatchColor == colorOfMana && dataMatchTypes == creatureCategory) {
+          if(dataMatchColor == colorOfMana && dataMatchTypes == creatureCategory) {
             creaturePoolArr.push(data.cards[i].name);
           } else if(dataMatchColor == colorOfMana && dataMatchTypes == instantCategory) {
             instantPoolArr.push(data.cards[i].name);
-          }
+          } 
         }
         console.log(landPoolArr);
         console.log(creaturePoolArr);
