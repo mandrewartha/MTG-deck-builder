@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- ADD WEB ANIMATION LINK -->
-    <!-- ADD FONT -->
-    <!-- ADD BOOTSTRAP -->
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- ADD WEB ANIMATION LINK -->
+        <!-- ADD FONT -->
+        <title>Document</title>
+    </head>
 
+    <body>
+        <nav class="nav-wrapper indigo">
+            <div class="container">
+                <a href="#" class="brand-logo">MTG Deck Generator</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Build your Deck!</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Your previous decks<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
 
-<body>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+        </ul>
 
-    <nav class="nav-wrapper indigo">
-        <div class="container">
-            <a href="#" class="brand-logo">MTG Deck Generator</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Build your Deck!</a></li>
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Your previous decks<i
-                            class="material-icons right">arrow_drop_down</i></a></li>
-            </ul>
         </div>
-    </nav>
 
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-    </ul>
+        <!-- Card display section -->
+        <div class="container-fluid center" id="card-display-section">
+            <div class="row d-flex" id="card-display-row">
+
+
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="script.js"></script>
+    </body>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -97,5 +106,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
 </body>
+
 
 </html>
