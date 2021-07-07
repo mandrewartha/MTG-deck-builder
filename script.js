@@ -48,6 +48,7 @@ var landCardJson = [
         color: "green",
         image: "https://crystalcommerce-assets.s3.amazonaws.com/photos/23611/large/Forest1.jpg?1406831491"
     },
+]
 
 function getUserInput(event) {
     event.preventDefault();
@@ -58,6 +59,17 @@ function getUserInput(event) {
     var numInstant = numInstantInput.value;
   
     // Add an alert message for valid number of cards 
+    var totalNumCards = numLand + numCreature + numInstant
+    
+    if (numCard < totalNumCards){
+        numLandInput.textContent = "Please remove cards to equal Total Number of Cards!";
+        numCreatures.textContent = "Please remove cards to equal Total Number of Cards!";
+        numInstantInput.textContent = "Please remove cards to equal Total Number of Cards!";
+    } else if (numCard > totalNumCards) {
+        numLandInput.textContent = "Please enter more cards";
+        numCreatures.textContent = "Please enter more cards";
+        numInstantInput.textContent = "Please enter more cards";
+    }
   
     console.log(numCard);
     console.log(colorMana);
