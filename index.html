@@ -31,7 +31,6 @@
     <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">one</a></li>
         <li class="divider"></li>
-
         <li><a href="#!">two</a></li>
         <li class="divider"></li>
         <li><a href="#!">three</a></li>
@@ -42,31 +41,31 @@
    <div class="modal-content">
      <h4>Modal Header</h4>
      <div class="container">
-        <form class="col">
+        <form class="col" id="modal-form">
             <div class="input-field row">
-                <input id="FirstName" type="text" class="validate">
-                <label for="FirstName"># of Cards:</label>
+                <input id="number-of-card" type="text" class="validate">
+                <label for="number of card"># of Cards:</label>
             </div>
             <div class="input-field row">
-                <input id="Phone" type="text" class="validate">
-                <label for="Phone">Color of Mana: </label>
+                <input id="color-of-mana" type="text" class="validate">
+                <label for="color of mana">Color of Mana: </label>
             </div>
             <div class="input-field row">
-                <input id="LastName" type="text" class="validate">
-                <label for="LastName"># of Land: </label>
+                <input id="number-of-land" type="text" class="validate">
+                <label for="number of land"># of Land: </label>
             </div>
             <div class="input-field row">                
-                <input id="Email" type="email" class="validate">
-                <label for="Email"># of Creatures: </label>
+                <input id="number-of-creature" type="text" class="validate">
+                <label for="number-of-creature"># of Creatures: </label>
             </div>
             <div class="input-field row">
-                <input id="Phone" type="text" class="validate">
-                <label for="Phone"># of Instants: </label>
+                <input id="number-of-instant" type="text" class="validate">
+                <label for="number of instant"># of Instants: </label>
             </div>
             
             
             <div class="input-field row center">
-                <button type="submit" class="waves-effect waves-light btn">Generate Deck!</button>
+                <button id="generate-btn" type="submit" class="waves-effect waves-light btn">Generate Deck!</button>
             </div>
         </form>                                         
     </div>
