@@ -19,6 +19,12 @@
     border: 5px solid yellow;
 }
 
+#error-message {
+    color:red;
+    font-style:italic;
+    font-size: 20px;
+}
+
 @media screen and (max-width: 768px) {
     .card-images {
         width: 33%;
