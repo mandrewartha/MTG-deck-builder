@@ -269,10 +269,10 @@ function getUserInput(event) {
   console.log(numLand);
   console.log(numCreature);
   console.log(numInstant);
-  getCardData(colorMana, numLand, numCreature, numInstant);
+  getCardData(colorMana, numLand, numCreature, numInstant, totalNumCards);
 }
 
-function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant) {
+function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant, totalCards) {
   var mtgApiUrl = "https://api.magicthegathering.io/v1/cards";
   
   fetch(mtgApiUrl)
