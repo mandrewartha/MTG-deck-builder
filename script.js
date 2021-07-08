@@ -336,7 +336,22 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
 
       console.log(landChosenArr);
       console.log(creatureChosenArr);
-      console.log(instantChosenArr);     
+      console.log(instantChosenArr);    
+      
+      var chosenCreatureInstantArr = [];
+      chosenCreatureInstantArr = creatureChosenArr.concat(instantChosenArr);
+      console.log(chosenCreatureInstantArr);
+
+
+      var totalCardArr = [];
+
+      for (let i = 0; i < totalCards; i++) {
+        var cardColumn = document.createElement('div');
+        cardColumn.classList.add("class", "column is-one-fifth");
+        totalCardArr.push(cardColumn);
+      }
+
+      console.log(totalCardArr);
   })
 }
 
