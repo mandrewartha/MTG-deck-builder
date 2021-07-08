@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- bulma -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-        <link rel="stylesheet" href="style.css" />
-        <!-- ADD WEB ANIMATION LINK -->
-        <!-- ADD FONT -->
-        <title>Document</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <!-- our css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- ADD WEB ANIMATION LINK -->
+    <!-- ADD FONT -->
+    <title>Document</title>
+</head>
 
-    <body>
-        <nav class="nav-wrapper indigo">
-            <div class="container">
-                <a href="#" class="brand-logo">MTG Deck Generator</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Build your Deck!</a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Your previous decks<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-            </div>
-        </nav>
+<body>
+    <nav class="nav-wrapper blue darken-4" id="nav-bar">
+        <!-- <div class="sidenav" id="mobile-demo"> -->
+        <div class="container--fluid">
+            <h1 id="mtg-header" class="brand-logo">MTG Deck Generator 
+                <img class="icon" id="white-mana" src="https://www.clipartmax.com/png/middle/32-326740_magic-the-gathering-mana-symbols.png" >
+                 <img class="icon" id="red-mana" src="https://www.clipartmax.com/png/middle/26-261220_wholesale-basic-land-magic-the-gathering-red-mana.png">
+                <img class="icon" id="black-mana" src="https://i.pinimg.com/originals/cd/5c/6a/cd5c6a6ca2fb7917989aa5afbc702fbf.jpg"> 
+                <img class="icon" id="blue-mana" src="https://www.pinclipart.com/picdir/middle/218-2186106_big-image-mtg-blue-mana-symbol-clipart.png">
+                <img class="icon" id="green-mana" src="https://www.clipartmax.com/png/middle/26-261379_wholesale-basic-land-magic-the-gathering-mana-symbols.png"></h1>
+            <ul class="right hide-on-med-and-down" id="dropdown-btns" >
+                <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Build your Deck!</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Your previous decks<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        <!-- </div> -->
+        </div>
+    </nav>
 
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">one</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">two</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">three</a></li>
-        </ul>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+    </ul>
 
-        <!-- Card display section -->
-        <div class="container-fluid" id="card-display-section">
-            <div class="columns is-multiline" id="card-display-row">
-                    <!-- <div class="column is-one-fifth">
+    <!-- Card display section -->
+    <div class="container-fluid" id="card-display-section">
+        <div class="columns is-multiline" id="card-display-row">
+            <!-- <div class="column is-one-fifth">
                         <div class="card">
                         <div class="card-image">
                             <img src="https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=524948&type=card">
@@ -81,61 +96,65 @@
                         </div>
                         </div>
                     </div> -->
+        </div>
+    </div>
+
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <div class="container">
+                <form class="col" id="modal-form">
+                    <div class="input-field row">
+                        <input id="number-of-card" class="validate" type="text">
+                        <label for="number of card"># of Cards:</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="color-of-mana">
+                                <option value="" disabled selected>Color of Mana</option>
+                                <option value="White">White</option>
+                                <option value="Red">Red</option>
+                                <option value="Green">Green</option>
+                                <option value="Black">Black</option>
+                                <option value="Blue">Blue</option>
+                            </select>
+                            <label>Color of Mana:</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field row">
+                        <input id="number-of-land" type="text" class="validate">
+                        <label for="number of land"># of Land: </label>
+                    </div>
+                    <div class="input-field row">
+                        <input id="number-of-creature" type="text" class="validate">
+                        <label for="number-of-creature"># of Creatures: </label>
+                    </div>
+                    <div class="input-field row">
+                        <input id="number-of-instant" type="text" class="validate">
+                        <label for="number of instant"># of Instants: </label>
+                    </div>
+
+                    <p class="center" class="error-message " id="error-message"></p>
+
+                    <div class="input-field row center">
+                        <button id="generate-btn" type="submit" class="waves-effect waves-light btn">Generate
+                            Deck!</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+        integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
 
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Modal Header</h4>
-                <div class="container">
-                    <form class="col" id="modal-form">
-                        <div class="input-field row">
-                            <input id="number-of-card" class="validate" type="text">
-                            <label for="number of card"># of Cards:</label>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <select id="color-of-mana">
-                                    <option value="" disabled selected>Color of Mana</option>
-                                    <option value="White">White</option>
-                                    <option value="Red">Red</option>
-                                    <option value="Green">Green</option>
-                                    <option value="Black">Black</option>
-                                    <option value="Blue">Blue</option>
-                                </select>
-                                <label>Color of Mana:</label>
-                            </div>    
-                        </div>
-                            
-                        <div class="input-field row">
-                            <input id="number-of-land" type="text" class="validate">
-                            <label for="number of land"># of Land: </label>
-                        </div>
-                        <div class="input-field row">
-                            <input id="number-of-creature" type="text" class="validate">
-                            <label for="number-of-creature"># of Creatures: </label>
-                        </div>
-                        <div class="input-field row">
-                            <input id="number-of-instant" type="text" class="validate">
-                            <label for="number of instant"># of Instants: </label>
-                        </div>
-
-                        <p class="center" class="error-message "id="error-message"></p>
-
-                        <div class="input-field row center">
-                            <button id="generate-btn" type="submit" class="waves-effect waves-light btn">Generate Deck!</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!--JavaScript at end of body for optimized loading-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="script.js"></script>
-    </body>
 </html>
