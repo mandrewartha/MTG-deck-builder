@@ -77,10 +77,12 @@ function getUserInput(event) {
 
   if (Number(numCard) < totalNumCards) {
       errorMessage.textContent = "Please remove cards to equal total number of cards";
+    return;
   } else if (Number(numCard) > totalNumCards) {
       errorMessage.textContent = "Please enter more cards";
+      return;
   } else if (Number(numCard) === totalNumCards) {
-      errorMessage.textContent = "";
+      $('.modal').hide();
   }
   console.log(numCard);
   console.log(colorMana);
