@@ -1,3 +1,14 @@
+body {
+    font-family: "Titillium Web";
+    font-weight: bold;
+}
+
+.icon img{
+    background: transparent;
+    height:30px;
+    width: auto;
+}
+
 .card-images {
     display:flex;
     flex-direction: row;
@@ -19,6 +30,12 @@
     border: 5px solid yellow;
 }
 
+#nav-bar {
+    height:100px;
+    /* position: fixed; */
+    top: 0;
+}
+
 #error-message {
     color:red;
     font-style:italic;
@@ -31,6 +48,17 @@
     height: auto;
     width: auto;
     border: 5px solid black
+}
+
+#mtg-header {
+    font-family:'Zen Tokyo Zoo';
+    font-size: 50px;
+    padding: 20px;
+    font-weight: normal;
+}
+
+#dropdown-btns {
+    padding: 15px;
 }
 
 @media screen and (max-width: 768px) {

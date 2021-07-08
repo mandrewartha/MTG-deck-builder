@@ -18,6 +18,10 @@ $(document).ready(function(){
     });  
 })(jQuery);
 
+//side-nav
+// $(document).ready(function(){
+//   $('.sidenav').sidenav();
+
 // Global variables
 var numCardInput = document.querySelector("#number-of-card");
 var colorManaInput = document.querySelector("#color-of-mana");
