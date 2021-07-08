@@ -1,6 +1,8 @@
 //modal pop up
 $(document).ready(function(){
-    $('.modal').modal();
+    $('.modal').modal({
+      opacity: 0,
+    });
   });
 
 //dropdown in nav bar
