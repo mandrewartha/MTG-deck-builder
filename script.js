@@ -38,37 +38,37 @@ var landCardJson = [
       name: "Isolated Chapel",
       type: "Land",
       color: "White",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqS7oNy0HX7G0NhEi_Wyur4pNrfklqTmHp2A&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=443129&type=card"
     },
     {
       name: "Idyllic Grange",
       type: "Land",
       color: "White",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVsjLVy53etpXi41By21tQgoOU9ee1TAZCA&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=473208&type=card"
     },
     {
       name: "Bant Panorama",
       type: "Land",
       color: "White",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgwvXeQgqAQsbTBX5eEX-0H_3PZEtikjSHjg&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=430460&type=card"
     },
     {
       name: "Nykthos, Shrine to Nyx",
       type: "Land",
       color: "White",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc1TMA3oFUIx6oLbRrKWvIB-xJtZxooe0TFw&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=373713&type=card"
     },
     {
       name: "Seaside Citadel",
       type: "Land",
       color: "White",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2yMmZwOToyW1h9NErsa3zwgekwHHcO_SLvQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=451232&type=card"
     },
     {
       name: "Isolated Watchtower",
       type: "Land",
       color: "White",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz06gHnqWqq7JOLsVJkxQhNIutrLJ3YTi24w&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=450660&type=card"
     },
     {
         name: "Swamp",
@@ -80,37 +80,37 @@ var landCardJson = [
       name: "Smoldering Marsh",
       type: "Land",
       color: "Black",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTikz1MLDaoffy6L9OzPVMJqxsNxkgcotv2xQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=482942&type=card"
     },
     {
       name: "Silent Clearing",
       type: "Land",
       color: "Black",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAHRFIN-pYbc2UGUHV2cgy-W8oQQb_SEKq_w&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=464195&type=card"
     },
     {
       name: "Cabal Stronghold",
       type: "Land",
       color: "Black",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUU_JTD5O3Oznbsan7xdrI9m_SbLjjAmFMwQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=443126&type=card"
     },
     {
-      name: "Castle Locthwait",
+      name: "Castle Locthwain",
       type: "Land",
       color: "Black",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVIVq_803QiODO5oLQ1f4ERvGlvLk-Op3w7g&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=473203&type=card"
     },
     {
       name: "Leechridden Swamp",
       type: "Land",
       color: "Black",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQunHnx1nEtFq1L-q6fpp2uTZoy5v3vACz8_g&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=417488&type=card"
     },
     {
       name: "Foul Orchard",
       type: "Land",
       color: "Black",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNoeFQky_zMRBEn5SZzDSNLznRy1ENfxXSNw&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=508400&type=card"
     },
     {
         name: "Island",
@@ -122,37 +122,37 @@ var landCardJson = [
       name: "Simic Growth Chamber",
       type: "Land",
       color: "Blue",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0iH7uk2uiTw6C9OfEVCRzsxuSLMTQvxgoTw&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=519352&type=card"
     },
     {
       name: "Zagoth Triome",
       type: "Land",
       color: "Blue",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnGXOCy7DD9e3Nmd4CecTcPCIGVEoLqSUIEg&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=479779&type=card"
     },
     {
       name: "Halimar Depths",
       type: "Land",
       color: "Blue",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtsoB-FDqADFpOUTSjxgniLhcsuFcqM2jOdQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=482908&type=card"
     },
     {
       name: "Botanical Sanctum",
       type: "Land",
       color: "Blue",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtCytHu3BPovWIH4cmH-gmjcQBSCwI1fyi8g&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=417817&type=card"
     },
     {
       name: "Evolving Wilds",
       type: "Land",
       color: "Blue",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwGUJv8MFOihZ__-o1lQ1ZK1oV5p3zEa_sZA&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=500962&type=card"
     },
     {
       name: "Tolaria West",
       type: "Land",
       color: "Blue",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3kWhrwr6HHpfVbsDCIqceAWl_wo7YjzPerQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=500962&type=card"
     },
     {
         name: "Mountain",
@@ -164,37 +164,37 @@ var landCardJson = [
       name: "Cinder Glade",
       type: "Land",
       color: "Red",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjPQocMB7d6MgJt4Wd0b10gh_82WpAieJ63Q&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=482891&type=card"
     },
     {
       name: "Caldera Lake",
       type: "Land",
       color: "Red",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPSBkfp4d9oUjDN3C15pnpt9KeTwDKVU6F4Q&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397490&type=card"
     },
     {
       name: "Sheltered Thicket",
       type: "Land", 
       color: "Red",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcuEG2fWYnsqxeQ9ja0cNHneTJOh-g9Reg4g&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=426950&type=card"
     },
     {
       name: "Ghitu Encampment",
       type: "Land",
       color: "Red",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS693oyC-kkTnmKMg1PTbyBjC9wlGVKLV0nFw&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=386321&type=card"
     },
     {
       name: "Needle Spires",
       type: "Land",
       color: "Red",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUouZ4EET_ITbdADqToBl7IeAoiUWhfZtbxA&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=496075&type=card"
     },
     {
       name: "Temple of Triumph",
       type: "Land",
       color: "Red",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRsn2D4G_KITNj3kGjDv-ZcSIoqhowUPyWA&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=519362&type=card"
     },
     {
         name: "Forest",
@@ -206,37 +206,37 @@ var landCardJson = [
       name: "Graypelt Refuge",
       type: "Land",
       color: "Green",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdKTOmY9l8bEvlSqjOcSlqhG2wWC39ii39SQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=470795&type=card"
     },
     {
       name: "Selesnya Guildgate",
       type: "Land",
       color: "Green",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMfn9SPQccCuFD1ucKmhDhH5HpobBtw-vCXw&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=496077&type=card"
     },
     {
       name: "Scattered Groves",
       type: "Land",
       color: "Green",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyxyUBCqvV1ByifzekDq76goZdyGY9Sd0ToQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=426949&type=card"
     },
     {
       name: "Castle Garenbrig",
       type: "Land",
       color: "Green",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ZO1zH6ZCjoBoMsMBoz8nAi7rRYHckoraeQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=473202&type=card"
     },
     {
       name: "Sunpetal Grove",
       type: "Land",
       color: "Green",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Gv4YQKmX2_ZVPWJQvb6rUVp6pf47lIScDQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=435418&type=card"
     },
     {
       name: "Bayou",
       type: "Land",
       color: "Green",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_yx4-cLwiAq6mjUPFrR1BzSNXogOYDxDXPQ&usqp=CAU"
+      image: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382860&type=card"
     }
 ]
 
