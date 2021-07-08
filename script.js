@@ -153,7 +153,7 @@ var landCardJson = [
       type: "Land",
       color: "Blue",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3kWhrwr6HHpfVbsDCIqceAWl_wo7YjzPerQ&usqp=CAU"
-    }
+    },
     {
         name: "Mountain",
         type: "Land",
