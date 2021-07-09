@@ -1,8 +1,12 @@
 
+:root {
+    background-color: #878B8B;
+}
+
 body {
     font-family: "Titillium Web";
     font-weight: bold;
-    background-color: #878B8B;
+    
 }
 
 .icon img{
@@ -17,26 +21,31 @@ body {
 
 .land {
     border: 5px solid green;
-    border-radius: 3px;
+    border-radius: 8px;
 }
 
 .creature {
     border: 5px solid red;
-    border-radius: 3px;
+    border-radius: 8px;
 }
 
 .instant {
     border: 5px solid yellow;
-    border-radius: 3px;
+    border-radius: 8px;
 }
 
 .nav-button {
     color: lightgrey;
-    margin: 5px;
+   
+    
+}
+
+#save-deck {
+    margin: 18px 5px 0px 10px;
 }
 
 #modal-btn {
-    margin-top: 30px;
+    margin-top: 32px;
 }
 
 #nav-bar {
@@ -58,7 +67,7 @@ body {
     padding: 10px;
     height: auto;
     width: auto;
-    border: 6px solid orange;
+    border: 6px solid #656869;
     border-radius: 3px;
 }
 
