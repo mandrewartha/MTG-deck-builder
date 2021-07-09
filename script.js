@@ -41,7 +41,6 @@ $(document).ready(function() {
       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
       $(".navbar-burger").toggleClass("is-active");
       $(".navbar-menu").toggleClass("is-active");
-
   });
 });
 
@@ -52,8 +51,9 @@ var numLandInput = document.querySelector("#number-of-land");
 var numCreatureInput = document.querySelector("#number-of-creature");
 var numInstantInput = document.querySelector("#number-of-instant");
 var cardDisplayBox = document.querySelector(".card-display-box");
+var deckUserInput = document.querySelector("#name-of-deck");
 
-var modalFormEl = document.querySelector("#modal-form")
+var modalFormEl = document.querySelector("#modal-form");
 
 // JSON data of land cards
 var landCardJson = [
@@ -276,6 +276,7 @@ function getUserInput(event) {
   var numLand = numLandInput.value;
   var numCreature = numCreatureInput.value;
   var numInstant = numInstantInput.value;
+  var deckNameInput = deckUserInput.value;
 
   console.log(numCard)
   // Add an alert message for valid number of cards 
@@ -302,9 +303,18 @@ function getUserInput(event) {
   console.log(numLand);
   console.log(numCreature);
   console.log(numInstant);
+  addDeckToDropdown(deckNameInput);
   getCardData(colorMana, numLand, numCreature, numInstant, totalNumCards);
   $('#modal-form')[0].reset();
+}
 
+function addDeckToDropdown(deckName) {
+  var deckDropdown = document.createElement('a');
+  deckDropdown.classList.add("navbar-item")
+  var btnEl = document.createElement('button');
+  deckDropdown.append(btnEl);
+  deckDropdown.textContent = deckName;
+  $("#save-deck-dropdown").append(deckDropdown);
 }
 
 function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant, totalCards) {

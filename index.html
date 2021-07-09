@@ -45,18 +45,16 @@
          
             <button data-target="modal1" class="btn modal-trigger" id="modal-btn">Build a Deck!</button>
       
-            <a class="nav-button" id="save-deck">
-                Save Your Deck!
-            </a>
-           
-
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link nav-button">
                 Previous Saved Decks
               </a>
       
               <div class="navbar-dropdown">
-                <a class="navbar-item">
+                <div id="save-deck-dropdown">
+
+                </div>
+                <!-- <a class="navbar-item">
                   Item 1
                 </a>
                 <a class="navbar-item">
@@ -64,7 +62,7 @@
                 </a>
                 <a class="navbar-item">
                   Item 3
-                </a>
+                </a> -->
                 <hr class="navbar-divider">
             </div>
             </div>
@@ -75,13 +73,7 @@
     
     </nav>
 
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-    </ul>
+
 
     <!-- Card display section -->
     <div class="container-fluid">
@@ -127,6 +119,10 @@
                     <div class="input-field row">
                         <input id="number-of-instant" type="text" class="validate">
                         <label for="number of instant"># of Instants: </label>
+                    </div>
+                    <div class="input-field row">
+                        <input id="name-of-deck" type="text" class="validate">
+                        <label for="name-of-deck">Name of Deck </label>
                     </div>
 
                     <p class="center" class="error-message " id="error-message"></p>
