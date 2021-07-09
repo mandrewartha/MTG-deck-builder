@@ -1,6 +1,8 @@
+
 body {
     font-family: "Titillium Web";
     font-weight: bold;
+    background-color: #878B8B;
 }
 
 .icon img{
@@ -30,6 +32,7 @@ body {
 
 .nav-button {
     color: lightgrey;
+    margin: 5px;
 }
 
 #modal-btn {
