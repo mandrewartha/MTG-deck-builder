@@ -10,12 +10,7 @@ body {
 }
 
 .card-images {
-    display:flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    width: 20%;
     border: none;
-    margin: 5px;
 }
 
 .land {
