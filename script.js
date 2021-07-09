@@ -1,9 +1,23 @@
 //modal pop up
+// $(document).ready(function(){
+//   $('.modal').openModal();
+// })
+
+// jQuery(document).ready(function(){
+//   jQuery('.modal').modal(open);
+// });
+
+var instance = M.Modal.getInstance(elem);
+instance.open();
+
 $(document).ready(function(){
     $('.modal').modal({
       opacity: 0,
     });
+   
+// $(".modal").instance.open()
   });
+
 
 //dropdown in nav bar
 $(document).ready(function(){
@@ -267,6 +281,7 @@ function getUserInput(event) {
   // Add an alert message for valid number of cards 
 
   var totalNumCards = Number(numLand) + Number(numCreature) + Number(numInstant);
+  var deckName = document.querySelector("#name-of-deck")
 
   var errorMessage = document.querySelector("#error-message");
 
@@ -278,6 +293,9 @@ function getUserInput(event) {
       return;
   } else if (Number(numCard) === totalNumCards) {
       $('.modal').hide();
+  } else if (!deckName) {
+    errorMessage.textContent = "Please enter deck name";
+    return
   }
   console.log(numCard);
   console.log(colorMana);
