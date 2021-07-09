@@ -301,7 +301,7 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
         var dataMatchColorLand = landCardJson[i].color;
         var dataMatchTypesLand = landCardJson[i].type;
         if (dataMatchColorLand === colorOfMana && dataMatchTypesLand === landCategory) {
-          landPoolArr.push(landCardJson[i].name);
+          landPoolArr.push(landCardJson[i]);
         }  
       }
 
@@ -309,9 +309,9 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
         var dataMatchColor = data.cards[i].colors[0];
         var dataMatchTypes = data.cards[i].types[0];
         if(dataMatchColor == colorOfMana && dataMatchTypes == creatureCategory) {
-          creaturePoolArr.push(data.cards[i].name);
+          creaturePoolArr.push(data.cards[i]);
         } else if(dataMatchColor == colorOfMana && dataMatchTypes == instantCategory) {
-          instantPoolArr.push(data.cards[i].name);
+          instantPoolArr.push(data.cards[i]);
         } 
       }
       console.log(landPoolArr);
@@ -348,16 +348,36 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
       chosenCreatureInstantArr = creatureChosenArr.concat(instantChosenArr);
       console.log(chosenCreatureInstantArr);
 
-
-      var totalCardArr = [];
-
-      for (let i = 0; i < totalCards; i++) {
-        var cardColumn = document.createElement('div');
-        cardColumn.classList.add("class", "column is-one-fifth");
-        totalCardArr.push(cardColumn);
+      for (let i = 0; i < landChosenArr.length; i++) {
+        var landCardColumn = document.createElement('div');
+        landCardColumn.classList.add("column", "is-one-fifth");
+        var landCardFrame = document.createElement('div');
+        landCardFrame.classList.add("card");
+        var landCardImage = document.createElement('div');
+        landCardImage.classList.add("card-image");
+        var landCardImageSource = document.createElement('img')
+        landCardImageSource.setAttribute('src', landChosenArr[i].image);
+        landCardImage.append(landCardImageSource);
+        landCardColumn.append(landCardFrame);
+        landCardColumn.append(landCardImage);
+        cardDisplayRow.append(landCardColumn);
       }
 
-      console.log(totalCardArr);
+      for (let i = 0; i < chosenCreatureInstantArr.length; i++) {
+        var landCardColumn = document.createElement('div');
+        landCardColumn.classList.add("column", "is-one-fifth");
+        var landCardFrame = document.createElement('div');
+        landCardFrame.classList.add("card");
+        var landCardImage = document.createElement('div');
+        landCardImage.classList.add("card-image");
+        var landCardImageSource = document.createElement('img')
+        landCardImageSource.setAttribute('src', chosenCreatureInstantArr[i].imageUrl);
+        landCardImage.append(landCardImageSource);
+        landCardColumn.append(landCardFrame);
+        landCardColumn.append(landCardImage);
+        cardDisplayRow.append(landCardColumn);
+      }
+
   })
 }
 
