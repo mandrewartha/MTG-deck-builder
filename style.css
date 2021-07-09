@@ -25,10 +25,20 @@ body {
     border: 5px solid yellow;
 }
 
+.nav-button {
+    color: lightgrey;
+}
+
+#modal-btn {
+    margin-top: 30px;
+}
+
 #nav-bar {
     height:100px;
     /* position: fixed; */
     top: 0;
+    background-color: #02315E;
+    color: white;
 }
 
 #error-message {
@@ -47,23 +57,26 @@ body {
 
 #mtg-header {
     font-family:'Zen Tokyo Zoo';
-    font-size: 50px;
+    font-size: 40px;
     padding: 20px;
     font-weight: normal;
+    color: white;
 }
 
 #dropdown-btns {
     padding: 15px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
     .card-images {
         width: 33%;
     }
 }
 
-@media screen and (max-width: 576px){
+
+@media screen and (max-width: 768px) {
     .card-images {
         width: 50%;
     }
 }
+

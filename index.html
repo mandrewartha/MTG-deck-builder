@@ -25,22 +25,53 @@
 </head>
 
 <body>
-    <nav class="nav-wrapper blue darken-4" id="nav-bar">
-        <!-- <div class="sidenav" id="mobile-demo"> -->
-        <div class="container--fluid">
-            <h1 id="mtg-header" class="brand-logo">MTG Deck Generator 
-                <img class="icon" id="white-mana" src="https://www.clipartmax.com/png/middle/32-326740_magic-the-gathering-mana-symbols.png" >
-                 <img class="icon" id="red-mana" src="https://www.clipartmax.com/png/middle/26-261220_wholesale-basic-land-magic-the-gathering-red-mana.png">
-                <img class="icon" id="black-mana" src="https://i.pinimg.com/originals/cd/5c/6a/cd5c6a6ca2fb7917989aa5afbc702fbf.jpg"> 
-                <img class="icon" id="blue-mana" src="https://www.pinclipart.com/picdir/middle/218-2186106_big-image-mtg-blue-mana-symbol-clipart.png">
-                <img class="icon" id="green-mana" src="https://www.clipartmax.com/png/middle/26-261379_wholesale-basic-land-magic-the-gathering-mana-symbols.png"></h1>
-            <ul class="right hide-on-med-and-down" id="dropdown-btns" >
-                <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Build your Deck!</a></li>
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Your previous decks<i
-                            class="material-icons right">arrow_drop_down</i></a></li>
-            </ul>
-        <!-- </div> -->
+
+    <nav class="navbar" role="navigation" aria-label="main navigation" id="nav-bar">
+        <div class="navbar-brand">
+          <p class="title" id="mtg-header"> Magic The Gathering Deck Builder <img class="icon circle" id="white-mana" src="https://www.clipartmax.com/png/middle/32-326740_magic-the-gathering-mana-symbols.png" >
+            <img class="icon circle" id="red-mana" src="https://www.clipartmax.com/png/middle/26-261220_wholesale-basic-land-magic-the-gathering-red-mana.png">
+           <img class="icon circle" id="black-mana" src="https://i.pinimg.com/originals/cd/5c/6a/cd5c6a6ca2fb7917989aa5afbc702fbf.jpg"> 
+           <img class="icon circle" id="blue-mana" src="https://www.pinclipart.com/picdir/middle/218-2186106_big-image-mtg-blue-mana-symbol-clipart.png">
+           <img class="icon circle" id="green-mana" src="https://www.clipartmax.com/png/middle/26-261379_wholesale-basic-land-magic-the-gathering-mana-symbols.png"></p>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu navbar-end">
+          <!-- <div class="navbar-start">
+            <a class="navbar-item">
+              Home
+            </a> -->
+      
+            <button data-target="modal1" class="btn modal-trigger" id="modal-btn">Build a Deck!</button>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link nav-button">
+                Previous Saved Decks
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  Item 1
+                </a>
+                <a class="navbar-item">
+                  Item 2
+                </a>
+                <a class="navbar-item">
+                  Item 3
+                </a>
+                <hr class="navbar-divider">
+            </div>
+            </div>
+          </div>
+      
+        </div>
+      </nav>
+    
     </nav>
 
     <ul id="dropdown1" class="dropdown-content">
