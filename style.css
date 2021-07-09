@@ -29,6 +29,10 @@ body {
     color: lightgrey;
 }
 
+#modal-btn {
+    margin-top: 30px;
+}
+
 #nav-bar {
     height:100px;
     /* position: fixed; */
