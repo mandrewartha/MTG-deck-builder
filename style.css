@@ -15,14 +15,17 @@ body {
 
 .land {
     border: 5px solid green;
+    border-radius: 3px;
 }
 
 .creature {
     border: 5px solid red;
+    border-radius: 3px;
 }
 
 .instant {
     border: 5px solid yellow;
+    border-radius: 3px;
 }
 
 .nav-button {
@@ -47,12 +50,13 @@ body {
     font-size: 20px;
 }
 
-#card-display-section {
+#card-display-row {
     margin: 20px;
     padding: 10px;
     height: auto;
     width: auto;
-    border: 5px solid black
+    border: 6px solid orange;
+    border-radius: 3px;
 }
 
 #mtg-header {

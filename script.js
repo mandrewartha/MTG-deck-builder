@@ -37,7 +37,7 @@ var colorManaInput = document.querySelector("#color-of-mana");
 var numLandInput = document.querySelector("#number-of-land");
 var numCreatureInput = document.querySelector("#number-of-creature");
 var numInstantInput = document.querySelector("#number-of-instant");
-var cardDisplayRow = document.querySelector("#card-display-row");
+var cardDisplayBox = document.querySelector(".card-display-box");
 
 var modalFormEl = document.querySelector("#modal-form")
 
@@ -285,6 +285,8 @@ function getUserInput(event) {
   console.log(numCreature);
   console.log(numInstant);
   getCardData(colorMana, numLand, numCreature, numInstant, totalNumCards);
+  $('#modal-form')[0].reset();
+
 }
 
 function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant, totalCards) {
@@ -295,6 +297,7 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
       return response.json();
     })
     .then(function (data) {
+      $('.card-display-box').empty();
       console.log(data);
       console.log(typeof(data));
       console.log(data.cards.length);
@@ -357,6 +360,8 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
       chosenCreatureInstantArr = creatureChosenArr.concat(instantChosenArr);
       console.log(chosenCreatureInstantArr);
 
+      cardDisplayBox.setAttribute("id", "card-display-row")
+
       for (let i = 0; i < landChosenArr.length; i++) {
         var landCardColumn = document.createElement('div');
         landCardColumn.classList.add("column", "is-one-fifth");
@@ -366,10 +371,13 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
         landCardImage.classList.add("card-image");
         var landCardImageSource = document.createElement('img')
         landCardImageSource.setAttribute('src', landChosenArr[i].image);
+        if (landChosenArr[i].type === landCategory) {
+          landCardImageSource.classList.add('land')
+        }
         landCardImage.append(landCardImageSource);
         landCardColumn.append(landCardFrame);
         landCardColumn.append(landCardImage);
-        cardDisplayRow.append(landCardColumn);
+        cardDisplayBox.append(landCardColumn);
       }
 
       for (let i = 0; i < chosenCreatureInstantArr.length; i++) {
@@ -381,10 +389,15 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
         landCardImage.classList.add("card-image");
         var landCardImageSource = document.createElement('img')
         landCardImageSource.setAttribute('src', chosenCreatureInstantArr[i].imageUrl);
+        if (chosenCreatureInstantArr[i].types[0] === creatureCategory) {
+          landCardImageSource.classList.add('creature')
+        } else {
+          landCardImageSource.classList.add('instant')
+        }
         landCardImage.append(landCardImageSource);
         landCardColumn.append(landCardFrame);
         landCardColumn.append(landCardImage);
-        cardDisplayRow.append(landCardColumn);
+        cardDisplayBox.append(landCardColumn);
       }
 
   })
