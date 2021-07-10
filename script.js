@@ -48,6 +48,33 @@ var savedDeckNameArr = [];
 var landSavedDeckArr = [];
 var creatureInstantSavedDeckArr =[];
 
+// Array that stores all our decks 
+// pulls from local storage on page refresh
+// if nothing in local storage creates an empty array
+var decks = JSON.parse(localStorage.getItem('decks')) || [];
+loadFromPreviousSession();
+
+function loadFromPreviousSession() {
+  // iterate over decks and add buttons from previous sessions
+  decks.forEach(function (deck) {
+    addDeckToDropdown(deck.name);
+  });
+}
+
+function addDeck(deckName, deckLands = [], deckCreatures = [], deckInstant = []) {
+  //two parameters= name is a string and cards in an array. use to generate a deck
+  // will array.push to deck array and make a new entry in decks
+  // will add new object to decks array
+  decks.push({
+    name: deckName, 
+    landChosenArr: deckLands,
+    creatureChosenArr: deckCreatures,
+    instantChosenArr: deckInstant,
+  });
+  // refreshes the array in local storage with new info 
+  localStorage.setItem('decks', JSON.stringify(decks));
+}
+
 // JSON data of land cards
 var landCardJson = [
     {
@@ -263,6 +290,8 @@ var landCardJson = [
 ]
 
 function getUserInput(event) {
+
+
   event.preventDefault();
   var numCard = numCardInput.value;
   var colorMana = colorManaInput.value;
@@ -293,37 +322,62 @@ function getUserInput(event) {
       $('.modal').hide();
   } 
 
-  savedDeckNameArr.unshift(deckNameInput);
+  // savedDeckNameArr.unshift(deckNameInput);
   console.log(numCard);
   console.log(colorMana);
   console.log(numLand);
   console.log(numCreature);
   console.log(numInstant);
   addDeckToDropdown(deckNameInput);
-  saveLocalStorageData();
-  getCardData(colorMana, numLand, numCreature, numInstant, totalNumCards);
+  // saveLocalStorageData();
+  getCardData(colorMana, numLand, numCreature, numInstant, totalNumCards, deckNameInput);
   $('#modal-form')[0].reset();
   
-  var getItemTest = storage.getItem("saved-decks-name");
-  console.log(getItemTest);
+  // var getItemTest = storage.getItem("saved-decks-name");
+  // console.log(getItemTest);
 }
 
+// Function that appends a new button to the dropdown
 function addDeckToDropdown(deckName) {
   var deckDropdown = document.createElement('a');
   deckDropdown.classList.add("navbar-item")
   var btnEl = document.createElement('button');
+  
+  // Add a function that runs on button click
+  deckDropdown.onclick = function() {
+    loadDeck(deckName);
+  };
+
   deckDropdown.append(btnEl);
   deckDropdown.textContent = deckName;
   $("#save-deck-dropdown").append(deckDropdown);
 }
 
-function saveLocalStorageData() {
-  localStorage.setItem("saved-decks-name", savedDeckNameArr)
-  localStorage.setItem("land-saved-decks", landSavedDeckArr);
-  localStorage.setItem("creature-instant-saved-decks", creatureInstantSavedDeckArr);
+// Tries to find a deck given a deckName and draw it on screen
+function loadDeck(deckName) {
+  var deckToLoad = decks.find(function (deck) {
+    return deck.name === deckName;
+  });
+
+  drawDeckOnScreen(deckToLoad.landChosenArr, deckToLoad.creatureChosenArr, deckToLoad.instantChosenArr);
 }
 
-function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant, totalCards) {
+// function clearSavedDecks() {
+//   var clearBtn = document.querySelector("#clear-button");
+
+//   clearBtn.onClick = function() {
+//     localStorage.clear()
+//   }
+// }
+
+
+
+var landCategory = "Land";
+var creatureCategory = "Creature";
+var instantCategory = "Instant";
+
+//add deckNameInut to parameters so we can use it in this function
+function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant, totalCards, deckNameInput) {
   var mtgApiUrl = "https://api.magicthegathering.io/v1/cards";
   
   fetch(mtgApiUrl)
@@ -336,9 +390,7 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
       console.log(typeof(data));
       console.log(data.cards.length);
       console.log(colorOfMana);
-      var landCategory = "Land";
-      var creatureCategory = "Creature";
-      var instantCategory = "Instant"
+
       var landPoolArr = [];
       var creaturePoolArr = [];
       var instantPoolArr = [];
@@ -386,58 +438,72 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
         instantChosenArr.push(instantPoolArrChosen);
       }
 
-      console.log(landChosenArr);
-      console.log(creatureChosenArr);
-      console.log(instantChosenArr);    
-      
-      var chosenCreatureInstantArr = [];
-      chosenCreatureInstantArr = creatureChosenArr.concat(instantChosenArr);
-      console.log(chosenCreatureInstantArr);
+      // We have all the data for this new deck
+      // Name -> deckNameInput
+      // Deck in 3 arrays -> landChosenArr, creatureChosenArr and instantChosenArr
+      addDeck(deckNameInput, landChosenArr, creatureChosenArr, instantChosenArr);
 
-      cardDisplayBox.setAttribute("id", "card-display-row")
+      console.log(decks);
 
-      for (let i = 0; i < landChosenArr.length; i++) {
-        var landCardColumn = document.createElement('div');
-        landCardColumn.classList.add("column", "is-one-fifth");
-        var landCardFrame = document.createElement('div');
-        landCardFrame.classList.add("card");
-        var landCardImage = document.createElement('div');
-        landCardImage.classList.add("card-image");
-        var landCardImageSource = document.createElement('img')
-        landCardImageSource.setAttribute('src', landChosenArr[i].image);
-        if (landChosenArr[i].type === landCategory) {
-          landCardImageSource.classList.add('land')
-        }
-        landCardImage.append(landCardImageSource);
-        landCardColumn.append(landCardFrame);
-        landCardColumn.append(landCardImage);
-        cardDisplayBox.append(landCardColumn);
-      }
-
-      for (let i = 0; i < chosenCreatureInstantArr.length; i++) {
-        var landCardColumn = document.createElement('div');
-        landCardColumn.classList.add("column", "is-one-fifth");
-        var landCardFrame = document.createElement('div');
-        landCardFrame.classList.add("card");
-        var landCardImage = document.createElement('div');
-        landCardImage.classList.add("card-image");
-        var landCardImageSource = document.createElement('img')
-        landCardImageSource.setAttribute('src', (chosenCreatureInstantArr[i].imageUrl || "./no-url-image.jpeg"));
-        if (chosenCreatureInstantArr[i].types[0] === creatureCategory) {
-          landCardImageSource.classList.add('creature')
-        } else {
-          landCardImageSource.classList.add('instant')
-        }
-        landCardImage.append(landCardImageSource);
-        landCardColumn.append(landCardFrame);
-        landCardColumn.append(landCardImage);
-        cardDisplayBox.append(landCardColumn);
-      }
+      drawDeckOnScreen(landChosenArr, creatureChosenArr, instantChosenArr);
   })
+}
+
+// Made part that draws cards on screen its own function
+// so we can run this without looking for the api
+function drawDeckOnScreen(landChosenArr, creatureChosenArr, instantChosenArr) 
+{        
+  // Clear previous decks
+  cardDisplayBox.innerHTML = '';
+
+  var chosenCreatureInstantArr = [];
+  chosenCreatureInstantArr = creatureChosenArr.concat(instantChosenArr);
+  console.log(chosenCreatureInstantArr);
+
+  cardDisplayBox.setAttribute("id", "card-display-row")
+
+  for (let i = 0; i < landChosenArr.length; i++) {
+    var landCardColumn = document.createElement('div');
+    landCardColumn.classList.add("column", "is-one-fifth");
+    var landCardFrame = document.createElement('div');
+    landCardFrame.classList.add("card");
+    var landCardImage = document.createElement('div');
+    landCardImage.classList.add("card-image");
+    var landCardImageSource = document.createElement('img')
+    landCardImageSource.setAttribute('src', landChosenArr[i].image);
+    if (landChosenArr[i].type === landCategory) {
+      landCardImageSource.classList.add('land')
+    }
+    landCardImage.append(landCardImageSource);
+    landCardColumn.append(landCardFrame);
+    landCardColumn.append(landCardImage);
+    cardDisplayBox.append(landCardColumn);
+  }
+
+  for (let i = 0; i < chosenCreatureInstantArr.length; i++) {
+    var landCardColumn = document.createElement('div');
+    landCardColumn.classList.add("column", "is-one-fifth");
+    var landCardFrame = document.createElement('div');
+    landCardFrame.classList.add("card");
+    var landCardImage = document.createElement('div');
+    landCardImage.classList.add("card-image");
+    var landCardImageSource = document.createElement('img')
+    landCardImageSource.setAttribute('src', (chosenCreatureInstantArr[i].imageUrl || "./no-url-image.jpeg"));
+    if (chosenCreatureInstantArr[i].types[0] === creatureCategory) {
+      landCardImageSource.classList.add('creature')
+    } else {
+      landCardImageSource.classList.add('instant')
+    }
+    landCardImage.append(landCardImageSource);
+    landCardColumn.append(landCardFrame);
+    landCardColumn.append(landCardImage);
+    cardDisplayBox.append(landCardColumn);
+  }
 }
 
 modalFormEl.addEventListener('submit', getUserInput);
 
+// web animations
 
 var turningIcon = {
   transform:"rotate(360deg) translate3D(-15%, -15%, 0)",
