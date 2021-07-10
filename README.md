@@ -36,5 +36,6 @@ The cards are displayed on the screen. When the screen shrinks to mobile size, t
 2. Meghan Andrewartha
 3. Tina Ganacias
 
-#Launched Site:
+
+# Launched Site:
 https://mandrewartha.github.io/MTG-deck-builder/
