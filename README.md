@@ -35,3 +35,6 @@ The cards are displayed on the screen. When the screen shrinks to mobile size, t
 1. Jun (Kevin) Choi
 2. Meghan Andrewartha
 3. Tina Ganacias
+
+#Launched Site:
+https://mandrewartha.github.io/MTG-deck-builder/
