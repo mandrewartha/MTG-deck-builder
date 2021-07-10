@@ -437,3 +437,39 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
 }
 
 modalFormEl.addEventListener('submit', getUserInput);
+
+
+var turningIcon = {
+  transform:"rotate(360deg) translate3D(-15%, -15%, 0)",
+}
+
+var iconTiming = {
+  duration: 7000,
+  
+}
+
+
+document.getElementById("white-mana").animate(
+  turningIcon,
+  iconTiming,
+);
+
+document.getElementById("red-mana").animate(
+  turningIcon,
+  iconTiming,
+);
+
+document.getElementById("black-mana").animate(
+  turningIcon,
+  iconTiming,
+);
+
+document.getElementById("blue-mana").animate(
+  turningIcon,
+  iconTiming,
+);
+
+document.getElementById("green-mana").animate(
+  turningIcon,
+  iconTiming,
+);
