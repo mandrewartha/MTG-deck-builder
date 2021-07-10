@@ -300,8 +300,6 @@ function getUserInput(event) {
   var numInstant = numInstantInput.value;
   var deckNameInput = deckUserInput.value;
 
-  console.log(numCard)
-  console.log(deckNameInput)
   // Add an alert message for valid number of cards 
 
   var totalNumCards = Number(numLand) + Number(numCreature) + Number(numInstant);
@@ -333,14 +331,14 @@ function getUserInput(event) {
   getCardData(colorMana, numLand, numCreature, numInstant, totalNumCards, deckNameInput);
   $('#modal-form')[0].reset();
   
-  // var getItemTest = storage.getItem("saved-decks-name");
-  // console.log(getItemTest);
+  
 }
 
 // Function that appends a new button to the dropdown
 function addDeckToDropdown(deckName) {
   var deckDropdown = document.createElement('a');
   deckDropdown.classList.add("navbar-item")
+  deckDropdown.classList.add("dropdown-menu")
   var btnEl = document.createElement('button');
   
   // Add a function that runs on button click
@@ -360,23 +358,28 @@ function loadDeck(deckName) {
   });
 
   drawDeckOnScreen(deckToLoad.landChosenArr, deckToLoad.creatureChosenArr, deckToLoad.instantChosenArr);
+
 }
 
-// function clearSavedDecks() {
-//   var clearBtn = document.querySelector("#clear-button");
 
-//   clearBtn.onClick = function() {
-//     localStorage.clear()
-//   }
-// }
+//clear local storage on button click
 
+function clearStorage() {
+
+  $(".dropdown-menu").empty();
+  $('.card-display-box').empty();
+  localStorage.clear()
+}
+
+
+document.getElementById('clear-button').addEventListener('click', clearStorage );
 
 
 var landCategory = "Land";
 var creatureCategory = "Creature";
 var instantCategory = "Instant";
 
-//add deckNameInut to parameters so we can use it in this function
+//add deckNameInput to parameters so we can use it in this function
 function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant, totalCards, deckNameInput) {
   var mtgApiUrl = "https://api.magicthegathering.io/v1/cards";
   
