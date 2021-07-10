@@ -44,6 +44,10 @@ var deckUserInput = document.querySelector("#name-of-deck");
 
 var modalFormEl = document.querySelector("#modal-form");
 
+var savedDeckNameArr = [];
+var landSavedDeckArr = [];
+var creatureInstantSavedDeckArr =[];
+
 // JSON data of land cards
 var landCardJson = [
     {
@@ -268,6 +272,7 @@ function getUserInput(event) {
   var deckNameInput = deckUserInput.value;
 
   console.log(numCard)
+  console.log(deckNameInput)
   // Add an alert message for valid number of cards 
 
   var totalNumCards = Number(numLand) + Number(numCreature) + Number(numInstant);
@@ -281,21 +286,26 @@ function getUserInput(event) {
   } else if (Number(numCard) > totalNumCards) {
       errorMessage.textContent = "Please enter more cards";
       return;
-  } else if (deckNameInput !== deckNameInput) {
+  } else if (deckNameInput === "") {
     errorMessage.textContent = "Please enter deck name";
     return;
   } else if (Number(numCard) === totalNumCards) {
       $('.modal').hide();
   } 
 
+  savedDeckNameArr.unshift(deckNameInput);
   console.log(numCard);
   console.log(colorMana);
   console.log(numLand);
   console.log(numCreature);
   console.log(numInstant);
   addDeckToDropdown(deckNameInput);
+  saveLocalStorageData();
   getCardData(colorMana, numLand, numCreature, numInstant, totalNumCards);
   $('#modal-form')[0].reset();
+  
+  var getItemTest = storage.getItem("saved-decks-name");
+  console.log(getItemTest);
 }
 
 function addDeckToDropdown(deckName) {
@@ -305,6 +315,12 @@ function addDeckToDropdown(deckName) {
   deckDropdown.append(btnEl);
   deckDropdown.textContent = deckName;
   $("#save-deck-dropdown").append(deckDropdown);
+}
+
+function saveLocalStorageData() {
+  localStorage.setItem("saved-decks-name", savedDeckNameArr)
+  localStorage.setItem("land-saved-decks", landSavedDeckArr);
+  localStorage.setItem("creature-instant-saved-decks", creatureInstantSavedDeckArr);
 }
 
 function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstant, totalCards) {
@@ -406,7 +422,7 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
         var landCardImage = document.createElement('div');
         landCardImage.classList.add("card-image");
         var landCardImageSource = document.createElement('img')
-        landCardImageSource.setAttribute('src', chosenCreatureInstantArr[i].imageUrl);
+        landCardImageSource.setAttribute('src', (chosenCreatureInstantArr[i].imageUrl || "./no-url-image.jpeg"));
         if (chosenCreatureInstantArr[i].types[0] === creatureCategory) {
           landCardImageSource.classList.add('creature')
         } else {
@@ -417,7 +433,6 @@ function getCardData(colorOfMana, numberOfLand, numberOfCreature, numberOfInstan
         landCardColumn.append(landCardImage);
         cardDisplayBox.append(landCardColumn);
       }
-
   })
 }
 
