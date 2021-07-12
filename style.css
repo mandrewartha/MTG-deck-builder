@@ -1,0 +1,95 @@
+
+:root {
+    background-color: #878B8B;
+}
+
+body {
+    font-family: "Titillium Web";
+    font-weight: bold;
+    
+}
+
+.icon img{
+    background: transparent;
+    height:30px;
+    width: auto;
+}
+
+.card-images {
+    border: none;
+}
+
+.land {
+    border: 5px solid green;
+    border-radius: 8px;
+}
+
+.creature {
+    border: 5px solid red;
+    border-radius: 8px;
+}
+
+.instant {
+    border: 5px solid yellow;
+    border-radius: 8px;
+}
+
+.nav-button {
+    color: lightgrey;
+   
+    
+}
+
+
+#modal-btn {
+    margin-top: 32px;
+}
+
+#nav-bar {
+    height:100px;
+    /* position: fixed; */
+    top: 0;
+    background-color: #02315E;
+    color: white;
+}
+
+#error-message {
+    color:red;
+    font-style:italic;
+    font-size: 20px;
+}
+
+#card-display-row {
+    margin: 20px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    border: 6px solid #656869;
+    border-radius: 3px;
+}
+
+#mtg-header {
+    font-family:'Zen Tokyo Zoo';
+    font-size: 40px;
+    padding: 20px;
+    font-weight: normal;
+    color: white;
+}
+
+#dropdown-btns {
+    padding: 15px;
+}
+
+@media screen and (max-width: 1023px) {
+    .card-images {
+        width: 33%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .card-images {
+        width: 50%;
+    }
+}
+
